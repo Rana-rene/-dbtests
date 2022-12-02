@@ -114,7 +114,17 @@ app.post("/search", async (req, res) => {
 
 
 
-
+const producta = [200,'Book', 'The JS Way', 9.99];
+dblib.insertProduct(producta)
+    .then(result => {
+        if (result.trans === "fail") {
+            console.log("ERROR OCCURED");
+            console.log(result.msg);
+        } else {
+            console.log("Insert Successful");
+            console.log(result.msg);
+        }
+    });
 
 // const dblib = require("./dblib.js");
 
